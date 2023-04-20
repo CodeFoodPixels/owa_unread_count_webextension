@@ -1,26 +1,44 @@
 {
-	"manifest_version": 3,
-	"name": "Outlook Web App Unread Count",
-	"short_name": "OWA Unread Count",
-	"description": "Update the favicon and title with an unread count",
-	"version": "1.0.0",
-	"author": "Luke Bonaccorsi",
-	"homepage_url": "https://github.com/codefoodpixels/owa_unread_count_webextension",
-	"icons": {
-		"48": "icon-48.png",
-		"96": "icon-96.png"
-	},
-	"permissions": ["tabs", "storage", "notifications"],
-	"content_scripts": [
-		{
-			"matches": ["https://outlook.office.com/mail/*"],
-			"js": ["content-script.js"]
-		}
-	],
-	"web_accessible_resources": [
-		{
-			"resources": ["favicon.png"],
-			"matches": ["https://outlook.office.com/*"]
-		}
-	]
+  "manifest_version": 3,
+  "name": "Outlook Web App Unread Count",
+  "short_name": "OWA Unread Count",
+  "description": "Update the favicon and title with an unread count",
+  "version": "1.0.0",
+  "author": "Luke Bonaccorsi",
+  "homepage_url": "https://github.com/codefoodpixels/owa_unread_count_webextension",
+  "icons": {
+    "48": "icon-48.png",
+    "96": "icon-96.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://outlook.office.com/mail/*"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "favicon.png"
+      ],
+      "matches": [
+        "https://outlook.office.com/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "owa_unread_count@lukeb.co.uk",
+      "strict_min_version": "54.0"
+    }
+  }
 }
